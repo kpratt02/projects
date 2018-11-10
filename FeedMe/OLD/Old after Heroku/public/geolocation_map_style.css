@@ -1,0 +1,40 @@
+html {
+	height: 100%;
+	font-family: Helvetica, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
+}
+/* TODO: ideally we will not have #wrap or #sidebar at all
+         this is just a proof of concept to make sure that the node server will
+         connect to mongo between the html page and the db */
+#wrap {
+	width: 80%;
+	height: 100%;
+}
+#map_canvas {
+	float: left;
+	width: 80%;
+	/* This is a hacky solution to not having the side bar
+	   really just proof the map is connected to mongo 
+
+	   Or this can just be cleaned up A LOT and kept as is 
+	   */
+	height: 100%;
+}
+#sidebar {
+	float: left;
+	/*margin-right: 80%;*/
+	width: 20%;
+	height: 100%;
+	background: #0099ff;
+	color: white;
+}
+
+.logo {
+    position:fixed;
+}
+

@@ -1,0 +1,16 @@
+{
+  "name": "nodemongoapp",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "latest",
+    "bootstrap": "^4.0.0-beta.2",
+    "cors": "latest",
+    "ejs": "latest",
+    "express": "^4.16.2",
+    "mongodb": "^2.2.33",
+    "twilio": "^3.10.1",
+    "validator": "latest"
+  },
+  "main": "server.js",
+  "devDependencies": {}
+}

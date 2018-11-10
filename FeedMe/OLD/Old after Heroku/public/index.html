@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+
+<html>
+
+	<head>
+		<title>FeedMe</title>
+		<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+
+		<!--<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyASpoZU6HoySc3A2e8U7H9jNc1ga-eZI&callback=initMap"
+  		type="text/javascript"></script> -->
+		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCyASpoZU6HoySc3A2e8U7H9jNc1ga-eZI&sensor=true"></script>
+	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<link rel="stylesheet" href="/geolocation_map_style.css" />
+		<link rel="shortcut icon" type="image/png" href="/favicon.png"/>
+
+		<script src="./create_map.js"></script>
+		<script> 
+			$('#sendForm').submit(function () {
+				return false;
+			});
+		</script>
+		
+
+	</head>
+	
+	<body onload="init()">
+		<div id="wrap"> 
+			<div id="map_canvas"></div>
+			<div class = "logo"> <img src="LogoPin.png" alt = "FeedMe Logo" /></div>
+			<div id="sidebar">
+				<!--  This form is temporary if we can figure out how to use the google maps sidebar 
+				-->
+				<form id="sendForm" method="post" action="/add-event">
+					<!-- TODO: -make location a drop down of hard coded 
+						        buildings.  This is needed because the absolute
+								coordinates are needed to put a marker onto the
+								map.  Or else we would have to dive right into 
+								maps API (this really makes our lives easier 
+								when we dont have to figure out that "lib" 
+								"tisch" and "library" are all the same 
+								building). Get Latitudes and Longs in a list
+					           -change times to numbers and not text
+					               ?maybe use js date obj (this will probs be 
+					               done in a .js file)?
+					           -add pictures
+					               seems pretty hard tbh and then we might have
+					               to pay for server space for mongo
+					            -->
+					Event Location: <select name="location">
+									  <option value="TischLibrary">Tisch Library</option>
+									  <option value="CampusCenter">Campus Center</option>
+									  <option value="Carm">Carmichael Hall</option>
+									  <option value="PrezLawn">Prez Lawn</option>
+									  <option value="Dewick">Dewick Dining Hall</option>
+									  <option value="TischGym">Tisch Fitness Center</option>
+									  <option value="SEC">Science and Engineering Complex</option>
+									  <option value="574">574 Boston Ave</option>
+									  <option value="SoGo">SoGo</option>
+									  <option value="Halligan">Halligan Hall</option>
+									</select>
+									<!--<input type="submit" value="Submit" name="location"> -->
+									<br>
+
+					Room: <br><input type="text" name="room"><br>
+					Food: <input type="text" name="food" required><br>
+					Start Time: <input type="time" name="timeStart" required><br>
+					End Time: <input type="time" name="timeEnd" required><br>
+					Additional Information: <input type="text" name="extraInfo"><br>
+					<input class="submit" type="submit" value="Send">
+				</form>
+			</div>
+		</div>
+
+	</body>
+</html>

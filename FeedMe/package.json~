@@ -1,0 +1,13 @@
+{
+	"name": "nodemongoapp",
+	"version": "0.0.1",
+	"dependencies": {
+		"express": "latest",
+		"mongodb": "latest",
+		"body-parser": "latest",
+		"validator": "latest",
+		"ejs": "latest"
+	},
+	"main": "server.js",
+	"devDependencies": {}
+}
